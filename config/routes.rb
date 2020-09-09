@@ -14,7 +14,7 @@ Rails.application.routes.draw do
       # get :cuisine # /restaurants/:id/cuisin
     end
 
-    resources :reviews, only: [:new, :create]
+    resources :reviews, only: [:create] # can remove :new page now since form is on show page
     # restaurants/:restaurant_id/reviews/new => reviews#new => C - Form
     # restaurants/:restaurant_id/reviews => reviews#create => C - process the form
 
