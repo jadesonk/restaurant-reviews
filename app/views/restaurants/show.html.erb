@@ -18,14 +18,26 @@
 <h2>Our Menu</h2>
 <ul>
   <% @restaurant.dishes.each do |dish| %>
-    <li><%= dish.name %></li>
+    <li>
+      <%= dish.name %> |
+      <%= link_to "Remove",
+          dish_path(dish),
+          method: :delete,
+          data: { confirm: "Are you sure?" } %>
+    </li>
   <% end %>
 </ul>
 
 <h2>All reviews</h2>
 <ul>
   <% @restaurant.reviews.each do |review| %>
-    <li><%= review.content %></li>
+    <li>
+      <%= review.content %> |
+      <%= link_to "Remove",
+          review_path(review),
+          method: :delete,
+          data: { confirm: "Are you sure?" } %>
+    </li>
   <% end %>
 </ul>
 

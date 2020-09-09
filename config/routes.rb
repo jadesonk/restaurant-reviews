@@ -25,6 +25,6 @@ Rails.application.routes.draw do
     # restaurants/:restaurant_id/dishes/update => dishes#update => U - process update form
   end
 
-  resources :reviews, only: [:index] # /reviews
-  resources :dishes, only: [:index] # /dishes
+  resources :reviews, only: [:index, :destroy] # /reviews
+  resources :dishes, only: [:index, :destroy] # /dishes
 end
