@@ -9,10 +9,10 @@ class DishesController < ApplicationController
 
   def create
     @restaurant = Restaurant.find(params[:restaurant_id])
-    new_dish = Dish.new(dish_params)
+    @dish = Dish.new(dish_params)
     # connect the new dish with the restaurant
-    new_dish.restaurant = @restaurant
-    if new_dish.save
+    @dish.restaurant = @restaurant
+    if @dish.save
       redirect_to @restaurant
     else
       render :new

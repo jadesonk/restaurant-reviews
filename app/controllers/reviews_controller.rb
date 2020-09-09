@@ -10,14 +10,14 @@ class ReviewsController < ApplicationController
 
   def create
     @restaurant = Restaurant.find(params[:restaurant_id])
-    new_review = Review.new(review_params)
-    new_review.restaurant = @restaurant
-    if new_review.save
+    @review = Review.new(review_params)
+    @review.restaurant = @restaurant
+    if @review.save
       # redirect_to restaurant_path(restaurant)
       redirect_to @restaurant
     else
       # redirect_to new_restaurant_review_path
-      render :new
+      render :new # need to find syntax for how to redirect to show page
     end
   end
 
