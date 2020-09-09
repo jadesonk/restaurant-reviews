@@ -1,0 +1,10 @@
+<!-- FORM -->
+<h2>Leave a review for <%= @restaurant.name %></h2>
+
+<!-- pass in an array when dealing with nested routes -->
+<%= simple_form_for([@restaurant, @review]) do |f| %>
+  <!-- content input -->
+  <%= f.input :content %>
+  <%= f.button :submit, class: 'btn-primary' %>
+  <!-- submit button -->
+<% end %>
